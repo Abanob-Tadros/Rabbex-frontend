@@ -1,56 +1,78 @@
 :root {
-  /*  Brand  */
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-foreground: #ffffff;
 
-  --secondary: #f3f4f6;
-  --secondary-hover: #e5e7eb;
-  --secondary-foreground: #111827;
+  /* Brand */
 
-  /*  Semantic  */
+  --primary: #ffffff;
+  --primary-hover: #e7e7e7;
+  --primary-foreground: #0a0a0a;
+
+  --secondary: #171717;
+  --secondary-hover: #262626;
+  --secondary-foreground: #fafafa;
+
+  /* Accent */
+  --accent: #c6a15b;
+  --accent-hover: #b18f4f;
+  --accent-foreground: #ffffff;
+
+  /* Semantic */
   --success: #22c55e;
   --warning: #f59e0b;
   --destructive: #ef4444;
-  --info: #06b6d4;
+  --info: #38bdf8;
 
-  /*  Surface  */
-  --background: #ffffff;
-  --surface: #f8fafc;
+  /* Surface */
+  --background: #f7f7f5;
+  --surface: #ffffff;
   --card: #ffffff;
 
-  /*  Text  */
-  --foreground: #111827;
+  /* Text */
+  --foreground: #111111;
   --muted-foreground: #6b7280;
 
-  /*  Border  */
-  --border: #e5e7eb;
-  --input: #d1d5db;
-  --ring: #2563eb;
+  /* Border */
+  --border: #e5e5e5;
+  --input: #d4d4d4;
+  --ring: var(--accent);
 
-  /*  Radius  */
+  /* Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-   /* Shadows  */
+  /* Shadows */
   --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
-  --shadow-md: 0 4px 8px rgb(0 0 0 / 8%);
-  --shadow-lg: 0 12px 24px rgb(0 0 0 / 12%);
+  --shadow-md: 0 6px 12px rgb(0 0 0 / 8%);
+  --shadow-lg: 0 14px 30px rgb(0 0 0 / 12%);
 }
-/* ------------------ */
+
 .dark {
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
+  /* Brand */
+  --primary: #ffffff;
+  --primary-hover: #e7e7e7;
+  --primary-foreground: #090909;
 
-  --background: #09090b;
-  --surface: #18181b;
-  --card: #27272a;
+  --secondary: #1b1b1b;
+  --secondary-hover: #292929;
+  --secondary-foreground: #fafafa;
 
+  /* Accent */
+  --accent: #c6a15b;
+  --accent-hover: #d6b06a;
+  --accent-foreground: #ffffff;
+
+  /* Surface */
+  --background: #090909;
+  --surface: #111111;
+  --card: #171717;
+
+  /* Text */
   --foreground: #fafafa;
   --muted-foreground: #a1a1aa;
 
-  --border: #3f3f46;
-  --input: #3f3f46;
+  /* Border */
+  --border: #262626;
+  --input: #303030;
+  --ring: var(--accent);
 }
