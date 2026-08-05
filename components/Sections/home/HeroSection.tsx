@@ -3,7 +3,7 @@ import Link from "next/link";
 import HeroImg from "@/public/image/HeroImage.png";
 export default function HeroSection() {
   return (
-    <section className="relative  min-h-screen w-full h-full overflow-hidden">
+    <section className="relative  min-h-screen w-full h-full overflow-hidden mb-4">
       {/* Background */}
       <Image
         src={HeroImg}
@@ -28,15 +28,14 @@ export default function HeroSection() {
               px-3
               py-1 
               text-xs 
+              
               uppercase tracking-[0.25em] text-neutral-300 backdrop-blur`}
           >
             Built For More
           </span>
 
-          <h1 className="mt-6 text-4xl font-black uppercase leading-[1.1] text-white md:text-6xl">
-            Discipline
-            <br />
-            Drives Destiny
+          <h1 className="mt-6 text-4xl font-black uppercase leading-[1.1] text-primary md:text-6xl">
+            Discipline Drives Destiny
           </h1>
 
           <p className="mt-6 max-w-[24rem] text-lg leading-8 text-neutral-300">
@@ -46,14 +45,14 @@ export default function HeroSection() {
           <div className="mt-10 flex gap-4">
             <Link
               href="/shop"
-              className="inline-flex h-12 w-30 items-center justify-center rounded-md bg-white font-semibold text-black"
+              className="inline-flex h-12 w-30 items-center justify-center rounded-md bg-primary font-semibold text-primary-foreground"
             >
               Shop Now
             </Link>
 
             <Link
               href="/explore"
-              className="inline-flex h-12 w-30 items-center justify-center rounded-md border border-white/20 bg-white/5 font-semibold text-white backdrop-blur transition hover:bg-white/10"
+              className="inline-flex h-12 w-30 items-center justify-center rounded-md border border-white/20 bg-white/5 font-semibold text-primary backdrop-blur transition hover:bg-white/10"
             >
               Explore
             </Link>
@@ -62,7 +61,7 @@ export default function HeroSection() {
       </div>
 
       {/* Watch Film */}
-      <button className="absolute bottom-12 right-10 flex flex-col items-center gap-3 text-white">
+      <button className="absolute bottom-12 right-10 flex flex-col items-center gap-3 text-primary">
         <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur transition hover:scale-105">
           ▶
         </div>

@@ -1,7 +1,5 @@
 :root {
-
   /* Brand */
-
   --primary: #ffffff;
   --primary-hover: #e7e7e7;
   --primary-foreground: #0a0a0a;
@@ -48,7 +46,6 @@
 }
 
 .dark {
-  /* Brand */
   --primary: #ffffff;
   --primary-hover: #e7e7e7;
   --primary-foreground: #090909;
@@ -57,22 +54,63 @@
   --secondary-hover: #292929;
   --secondary-foreground: #fafafa;
 
-  /* Accent */
   --accent: #c6a15b;
   --accent-hover: #d6b06a;
   --accent-foreground: #ffffff;
 
-  /* Surface */
   --background: #090909;
   --surface: #111111;
   --card: #171717;
 
-  /* Text */
   --foreground: #fafafa;
   --muted-foreground: #a1a1aa;
 
-  /* Border */
   --border: #262626;
   --input: #303030;
   --ring: var(--accent);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* Semantic */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-destructive: var(--destructive);
+  --color-info: var(--info);
+
+  /* Surface */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+
+  /* Text */
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Border */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
 }
