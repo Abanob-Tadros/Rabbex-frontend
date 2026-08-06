@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroImg from "@/public/image/HeroImage.png";
+import { TextAnimate } from "@/components/ui/text-animate";
+
 export default function HeroSection() {
   return (
     <section className="relative  min-h-screen w-full h-full overflow-hidden mb-4">
@@ -34,10 +36,15 @@ export default function HeroSection() {
             Built For More
           </span>
 
-          <h1 className="mt-6 text-4xl font-black uppercase leading-[1.1] text-primary md:text-6xl">
+          <TextAnimate
+            animation="slideLeft"
+            by="word"
+            duration={0.6}
+            once={true}
+            className="mt-6 text-4xl font-black uppercase text-primary md:text-6xl"
+          >
             Discipline Drives Destiny
-          </h1>
-
+          </TextAnimate>
           <p className="mt-6 max-w-[24rem] text-lg leading-8 text-neutral-300">
             Premium performance wear for those who exceed limits.
           </p>
