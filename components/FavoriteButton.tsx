@@ -9,7 +9,7 @@ export default function FavoriteButton() {
   return (
     <button
       onClick={() => setIsFavorite(!isFavorite)}
-      className="absolute top-2 right-2 flex w-5 h-5 items-center justify-center rounded-full  transition-all hover:scale-110 active:scale-95"
+      className="absolute top-2 right-2 flex w-7 h-7 items-center justify-center rounded-full  transition-all hover:scale-110 active:scale-95"
     >
       <Icon
         icon={
@@ -17,8 +17,8 @@ export default function FavoriteButton() {
             ? "material-symbols:favorite-rounded"
             : "material-symbols:favorite-outline-rounded"
         }
-        width={20}
-        height={20}
+        width={40}
+        height={40}
         className={`transition-colors duration-300 ${
           isFavorite ? "text-red-500" : "text-gray-500"
         }`}

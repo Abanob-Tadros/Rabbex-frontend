@@ -1,35 +1,44 @@
 //components
 import CategoryCard from "@/components/CategoryCard";
-import Tshirt from "@/public/image/Category/Tshert.png";
-import Sweetpants from "@/public/image/Category/Sweetpants.png";
+//Next
 import Link from "next/link";
+import { StaticImageData } from "next/image";
+//data Images
+import Tshirt from "@/public/image/Category/T-Shirts.png";
+import Sweetpants from "@/public/image/Category/Sweetpants.png";
+import Hoodies from "@/public/image/Category/Hoodies.png";
+import Shose from "@/public/image/Category/Shose.png";
+import Bags from "@/public/image/Category/Bags.png";
+// types
+interface iCategory {
+  categoryName: string;
+  categoryImage: StaticImageData | string;
+}
 //data
-const CategoryData = [
+const CategoryData: iCategory[] = [
   { categoryName: "T-Shirts", categoryImage: Tshirt },
-  { categoryName: "Sweetpants", categoryImage: Sweetpants },
-  { categoryName: "Sweetpants", categoryImage: Sweetpants },
-  { categoryName: "Sweetpants", categoryImage: Sweetpants },
-  { categoryName: "Sweetpants", categoryImage: Sweetpants },
+  { categoryName: "Hoodies", categoryImage: Hoodies },
+  { categoryName: "Sweet pants", categoryImage: Sweetpants },
+  { categoryName: "Shose", categoryImage: Shose },
+  { categoryName: "Bags", categoryImage: Bags },
 ];
 //-----------------------------
 export default function CategorySection() {
   return (
-    <div>
-        <div className="flex flex-row justify-between items-center mb-4">
-      <div className="flex flex-col  justify-start gap-2 mb-4">
-        {/* TOP title */}
+    <div className="flex flex-col gap-4">
+     
 
-        <h1 className="text-4xl font-bold">shop by category</h1>
-        <p className="text-sm">everything you need</p>
+          {/* TOP title */}
+        <div className="w-fit flex flex-col justify-start gap-2">
+          <h1 className="text-3xl md:text-4xl font-bold">shop by category</h1>
+          <p className="text-sm">everything you need</p>
         </div>
-        <Link href="/category" className="text-sm text-Primary hover:text-primary-hover hover:underline">
-          View All 
-        </Link>
-      </div>
+      
       {/* Category Section */}
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
+      <div className=" flex flex-row justify-between items-center overflow-x-auto scrollbar-none mb-4 gap-4">
         {CategoryData.map((Category, index) => (
           <CategoryCard
+            className="w-50 md:w-75 h-50 md:h-75"
             key={index}
             categoryName={Category.categoryName}
             categoryImage={Category.categoryImage}

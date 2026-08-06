@@ -24,10 +24,9 @@ export default function ProductCard({
           alt={product.productName}
           className="h-fit w-full object-cover transition duration-300 hover:scale-105"
         />
-        <p className="absolute top-2 left-2 text-[10px] bg-secondary text-primary px-1.5 rounded-md">
+        <p className="absolute top-2 left-2 text-sm bg-secondary text-primary px-1.5 rounded-md">
           New
         </p>
-
         <FavoriteButton />
       </div>
       <div>

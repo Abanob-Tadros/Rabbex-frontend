@@ -1,5 +1,5 @@
-import Tshirt from "@/public/image/Category/Tshert.png"
-import Sweetpants from "@/public/image/Category/Sweetpants.png"
+import Tshirt from "@/public/image/Prudact/Tshert.png"
+import Sweetpants from "@/public/image/Prudact/Sweetpants.png"
 import { Product } from "@/types/Product "
 export const productData: Product[] = Array.from({ length: 100 }, (_, index) => ({
   productName:
@@ -13,3 +13,5 @@ export const productData: Product[] = Array.from({ length: 100 }, (_, index) => 
 
   rate: [3.5, 4.0, 4.2, 4.5, 4.8, 5.0][index % 6],
 }));
+
+
