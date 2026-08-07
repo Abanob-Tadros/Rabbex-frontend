@@ -1,25 +1,22 @@
 "use client";
 
-// Next
-import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
-// Images
 import logoWhite from "@/public/Image/Logo/Logo.png";
-import logoDark from "@/public/image/Logo/Logo dark.png";
+import logoDark from "@/public/Image/Logo/Logo dark.png";
 
-//--------------------------
+import { cn } from "@/lib/cn";
+
 interface LogoProps {
-  sizeClass?: string;
+  className?: string;
   variant?: "default" | "white";
   followTheme?: boolean;
   inverseTheme?: boolean;
 }
-//--------------------------
 
 export default function Logo({
-  sizeClass = "w-[120px] sm:w-[160px] md:w-[200px]",
+  className = "w-28 sm:w-36 md:w-44 lg:w-52",
   variant = "default",
   followTheme = false,
   inverseTheme = false,
@@ -37,12 +34,11 @@ export default function Logo({
   }
 
   return (
-    <Link href="/">
-      <Image
-        src={logoSrc}
-        alt="Logo"
-        className={`h-auto cursor-pointer ${sizeClass}`}
-      />
-    </Link>
+    <Image
+      src={logoSrc}
+      alt="Logo"
+      priority
+      className={cn("h-auto cursor-pointer", className)}
+    />
   );
 }

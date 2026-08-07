@@ -5,20 +5,16 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary:
-          "bg-primary text-white hover:bg-primary/90",
+        primary: "bg-primary text-white hover:bg-primary/90",
 
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/90",
 
-        outline:
-          "border border-border bg-transparent hover:bg-accent",
+        outline: "border border-border bg-transparent hover:bg-accent",
 
-        ghost:
-          "hover:bg-accent",
+        ghost: "hover:bg-accent",
 
-        destructive:
-          "bg-red-600 text-white hover:bg-red-700",
+        destructive: "bg-red-600 text-white hover:bg-red-700",
       },
 
       size: {
@@ -36,5 +32,5 @@ export const buttonVariants = cva(
       variant: "primary",
       size: "md",
     },
-  }
+  },
 );
