@@ -20,20 +20,21 @@ export default function HorizontalNavbar({ Links, locale }: Props) {
   const styleBtn =
     "border-2 border-[#5757572d] rounded-full flex items-center px-2 py-2";
   return (
-    <nav className="w-fit fixed top-4 left-1/2 -translate-x-1/2 z-50">
-      <GlassLayout className="flex items-center px-2 ">
+    <nav className="w-full px-30 fixed top-4 left-1/2 -translate-x-1/2 z-50">
+      <GlassLayout className="flex justify-between items-center px-2 ">
         
-        <Logo variant="white" className="w-50 pb-2 ml-2 mr-10" />
-
+        <Logo variant="white" className="w-60 pb-2 pl-6 mr-10" />
+<div>
         {Links.map((link, index) => (
           <Link
             key={index}
             href={link.url}
-            className="px-4 py-2 mx-2 font-semibold text-white cursor-pointer"
+            className="w-full px-4 py-2 mx-2 font-semibold text-white cursor-pointer"
           >
             {link.title}
           </Link>
         ))}
+</div>
 
         {/* searsh bar */}
         <div className="flex items-center px-5 gap-4">
