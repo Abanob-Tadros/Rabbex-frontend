@@ -38,7 +38,7 @@ export default function Logo({
       src={logoSrc}
       alt="Logo"
       priority
-      className={cn("h-auto cursor-pointer", className)}
+      className={`h-auto cursor-pointer ${className}`}
     />
   );
 }

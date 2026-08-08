@@ -36,7 +36,8 @@ export default function HorizontalNavbar({ Links, locale }: Props) {
         ))}
 </div>
 
-        {/* searsh bar */}
+ //TODO: add search bar 
+
         <div className="flex items-center px-5 gap-4">
           <div className={`${styleBtn} `}>
             <AnimatedThemeTogglerDemo />
