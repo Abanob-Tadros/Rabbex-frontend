@@ -33,6 +33,11 @@ export default function Sidebar() {
       url: "/settings",
       icon: "material-symbols:settings-outline-rounded",
     },
+    {
+      title: "Website",
+      url: "/",
+      icon: "mingcute:web-line",
+    },
   ];
   return (
     <div className="w-full max-w-70 h-screen flex flex-col  border border-border py-4 pr-4 ">
