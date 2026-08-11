@@ -1,5 +1,10 @@
 import { z } from "zod";
 
+const colorSchema = z.object({
+  name: z.string(),
+  hex: z.string(),
+});
+
 export const productSchema = z.object({
   //General information
   name: z.string().min(3, "Name is required"),
@@ -15,20 +20,24 @@ export const productSchema = z.object({
   // -------------------------------------
   //Pricing and Stock
   price: z.number().min(0, "Price must be greater than 0"),
-  stock: z
-    .number()
-    .int("Stock must be a whole number")
-    .min(0, "Stock cannot be negative"),
   discount: z
     .number()
     .min(0, "Discount cannot be negative")
     .max(100, "Discount cannot exceed 100"),
   discountType: z.string().min(1, "Please select discount type"),
+  //--------------------
+  variantStock: z.record(
+  z.string(),
+  z.record(
+    z.string(),
+    z.number().min(0)
+  )
+),
   // -------------------------------------
   //Product Color
   colors: z
-  .array(z.string())
-  .min(1, "Select at least one color"),
+    .array(colorSchema)
+    .min(1, "Select at least one color"),
   // -------------------------------------
   //Upload Images
   images: z

@@ -11,15 +11,16 @@ import {
 import BasicInfo from "../components/Form/BasicInfo";
 import ProductSize from "../components/Form/ProductSize";
 import Genders from "../components/Form/Gender";
-import PricingAndStock from "../components/Form/PricingAndStock";
+import Pricing from "../components/Form/Pricing";
 import UploadImages from "../components/Form/UploadImg";
 import Category from "../components/Form/Category";
 import ProductColor from "../components/Form/ProductColor";
+import VariantStock from "../components/Form/VariantStock";
 //----------------------------
 export default function ProductForm() {
   const form = useForm<ProductFormData>({
-    resolver: zodResolver(productSchema),
-  });
+  resolver: zodResolver(productSchema),
+});
 
   const onSubmit = (data: ProductFormData) => {
     console.log(data);
@@ -36,12 +37,13 @@ export default function ProductForm() {
             <BasicInfo />
             <div className="flex flex-row gap-4">
               <ProductSize />
+              <VariantStock />
               <Genders />
             </div>
           </div>
           {/* PricingAndStock */}
           <div className="flex flex-col bg-secondary-hover rounded-md gap-2 p-4">
-            <PricingAndStock />
+            <Pricing />
           </div>
         </div>
 
