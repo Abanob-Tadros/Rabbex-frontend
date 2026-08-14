@@ -3,9 +3,7 @@ import { Icon } from "@iconify/react";
 
 export default function page() {
   return (
-    <div
-      className="w-full h-full flex flex-col p-5 gap-5"
-    >
+    <div className="w-full h-full flex flex-col gap-5">
       <h1 className="text-2xl font-semibold flex  items-center gap-2">
         <Icon icon="ci:handbag" />
         Add New Product

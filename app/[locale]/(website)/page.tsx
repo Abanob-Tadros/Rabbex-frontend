@@ -1,9 +1,9 @@
 // import SwitchLanguage from "@/components/SwitchLanguage";
 
 // import SwitchOnOff from "@/components/SwitchOnOff";
-import HeroSection from "@/components/Sections/home/HeroSection";
-import CategorySection from "@/components/Sections/home/categorySection";
-import NewDrops from "@/components/Sections/home/NewDrops";
+import HeroSection from "@/components/web/home/HeroSection";
+import CategorySection from "@/components/web/home/categorySection";
+import NewDrops from "@/components/web/home/NewDrops";
 // import Logo from "@/components/Logo";
 
 export default function Home() {

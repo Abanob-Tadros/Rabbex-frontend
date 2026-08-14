@@ -2,6 +2,7 @@
 
 import { useFormContext } from "react-hook-form";
 import { ProductFormData } from "./validation/schema";
+import ValidationErrorUi from "@/components/ValidationErrorUi";
 
 const sizes = ["XS", "S", "M", "L", "XL", "XXL"] as const;
 
@@ -12,24 +13,22 @@ export default function ProductSize() {
   } = useFormContext<ProductFormData>();
 
   return (
-    <section>
+    <section className="rounded-lg border border-border bg-card p-5 shadow-sm">
       {/* Title */}
-      <h2 className="mb-2 text-lg font-semibold text-foreground">
-        Size
-      </h2>
+      <div className="mb-5">
+        <h2 className="text-base font-semibold tracking-tight text-foreground">
+          Size
+        </h2>
 
-      {/* Description */}
-      <p className="mb-4 text-xs text-muted-foreground">
-        Pick Available Sizes
-      </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Pick Available Sizes
+        </p>
+      </div>
 
       {/* Options */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2.5">
         {sizes.map((size) => (
-          <label
-            key={size}
-            className="cursor-pointer"
-          >
+          <label key={size} className="cursor-pointer">
             <input
               type="checkbox"
               value={size}
@@ -39,21 +38,22 @@ export default function ProductSize() {
 
             <span
               className="
-                flex h-10 w-10
-                items-center justify-center
+                flex h-11 min-w-11 items-center justify-center
                 rounded-md
                 border border-input
                 bg-surface
-                text-sm
+                px-3
+                text-sm font-medium
                 text-foreground
-                transition-all
-                duration-200
+                transition-all duration-200
 
+                hover:border-accent/50
                 hover:bg-background-hover
 
                 peer-checked:border-accent
                 peer-checked:bg-accent
                 peer-checked:text-accent-foreground
+                peer-checked:shadow-sm
 
                 peer-focus-visible:ring-2
                 peer-focus-visible:ring-accent
@@ -68,11 +68,7 @@ export default function ProductSize() {
       </div>
 
       {/* Error */}
-      {errors.sizes && (
-        <p className="mt-2 text-xs text-destructive">
-          {errors.sizes.message}
-        </p>
-      )}
+       <ValidationErrorUi message={errors.sizes?.message} />
     </section>
   );
 }

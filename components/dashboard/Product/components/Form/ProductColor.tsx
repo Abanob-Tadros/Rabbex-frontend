@@ -2,6 +2,7 @@
 
 import { useFormContext, useWatch } from "react-hook-form";
 import { ProductFormData } from "./validation/schema";
+import ValidationErrorUi from "@/components/ValidationErrorUi";
 
 const colors = [
   { name: "Black", hex: "#000000" },
@@ -47,19 +48,20 @@ export default function ProductColor() {
   };
 
   return (
-    <section>
-      {/* Title */}
-      <h2 className="mb-2 text-lg font-semibold text-foreground">
-        Product Color
-      </h2>
+    <section className="rounded-lg border border-border bg-card p-5 shadow-sm">
+      {/* Header */}
+      <div className="mb-5">
+        <h2 className="text-base font-semibold tracking-tight text-foreground">
+          Product Color
+        </h2>
 
-      {/* Description */}
-      <p className="mb-4 text-xs text-muted-foreground">
-        Pick Available Colors
-      </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Pick Available Colors
+        </p>
+      </div>
 
       {/* Colors */}
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-3">
         {colors.map((color) => {
           const selected = isSelected(color.hex);
 
@@ -72,8 +74,9 @@ export default function ProductColor() {
               aria-label={`Select ${color.name}`}
               aria-pressed={selected}
               className={`
+                group
                 relative
-                h-10 w-10
+                h-11 w-11
                 rounded-full
                 border
                 transition-all
@@ -83,11 +86,11 @@ export default function ProductColor() {
                 focus:ring-2
                 focus:ring-accent
                 focus:ring-offset-2
-                focus:ring-offset-background
+                focus:ring-offset-card
 
                 ${
                   selected
-                    ? "scale-110 ring-2 ring-accent ring-offset-2 ring-offset-background"
+                    ? "scale-110 ring-2 ring-accent ring-offset-2 ring-offset-card"
                     : "border-input"
                 }
               `}
@@ -100,13 +103,14 @@ export default function ProductColor() {
                 <span className="absolute inset-0 flex items-center justify-center">
                   <span
                     className={`
-                      flex h-4 w-4 items-center justify-center
+                      flex h-5 w-5 items-center justify-center
                       rounded-full
                       text-[10px] font-bold
+                      shadow-sm
                       ${
                         color.hex === "#FFFFFF" ||
                         color.hex === "#EAB308"
-                          ? "bg-secondary text-primary"
+                          ? "bg-secondary text-secondary-foreground"
                           : "bg-primary text-primary-foreground"
                       }
                     `}
@@ -121,11 +125,7 @@ export default function ProductColor() {
       </div>
 
       {/* Error */}
-      {errors.colors && (
-        <p className="mt-2 text-xs text-destructive">
-          {errors.colors.message}
-        </p>
-      )}
+       <ValidationErrorUi message={errors.colors?.message} />
     </section>
   );
 }

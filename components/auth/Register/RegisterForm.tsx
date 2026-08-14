@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { registerSchema, type RegisterFormData } from "./schema";
+import ValidationErrorUi from "@/components/ValidationErrorUi";
 
 export default function RegisterForm() {
   const {
@@ -48,9 +49,7 @@ export default function RegisterForm() {
           className="w-full rounded border p-2"
         />
 
-        {errors.name && (
-          <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>
-        )}
+       <ValidationErrorUi message={errors.name?.message} />
       </div>
 
       {/* Email */}

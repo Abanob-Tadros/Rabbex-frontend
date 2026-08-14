@@ -3,6 +3,7 @@
 import { useFormContext } from "react-hook-form";
 
 import { ProductFormData } from "./validation/schema";
+import ValidationErrorUi from "@/components/ValidationErrorUi";
 
 export default function Category() {
   const {
@@ -37,16 +38,22 @@ export default function Category() {
   };
 
   return (
-    <section className="rounded-2xl bg-white p-4">
-      {/* Title */}
-      <h2 className="mb-3 text-sm font-semibold text-neutral-900">
-        Category
-      </h2>
+    <section className="rounded-lg border border-border bg-card p-5 shadow-sm">
+      {/* Header */}
+      <div className="mb-5">
+        <h2 className="text-base font-semibold tracking-tight text-foreground">
+          Category
+        </h2>
+
+        <p className="mt-1 text-xs text-muted-foreground">
+          Select the product category
+        </p>
+      </div>
 
       {/* Label */}
       <label
         htmlFor="category"
-        className="mb-1.5 block text-xs font-medium text-neutral-800"
+        className="mb-1.5 block text-xs font-medium text-foreground"
       >
         Product Category
       </label>
@@ -59,16 +66,20 @@ export default function Category() {
           h-10
           w-full
           rounded-md
-          border-0
-          bg-neutral-100
+          border border-input
+          bg-surface
           px-3
           text-sm
-          text-neutral-700
+          text-foreground
           outline-none
-          transition
-          focus:bg-neutral-200
+          transition-all
+          duration-200
+
+          hover:border-accent/50
+
+          focus:border-accent
           focus:ring-2
-          focus:ring-neutral-300
+          focus:ring-accent/20
         "
       >
         <option value="">
@@ -86,27 +97,34 @@ export default function Category() {
       </select>
 
       {/* Error */}
-      {errors.category && (
-        <p className="mt-1 text-xs text-red-500">
-          {errors.category.message}
-        </p>
-      )}
-
+       <ValidationErrorUi message={errors.category?.message} />
       {/* Add Category */}
       <button
         type="button"
         onClick={handleAddCategory}
         className="
-          mt-3
-          rounded-full
-          bg-green-300
+          mt-4
+          inline-flex
+          h-9
+          items-center
+          justify-center
+          rounded-md
+          border
+          border-accent
+          bg-accent
           px-4
-          py-2
           text-xs
-          font-medium
-          text-neutral-900
-          transition
-          hover:bg-green-400
+          font-semibold
+          text-accent-foreground
+          transition-all
+          duration-200
+
+          hover:bg-accent-hover
+          focus:outline-none
+          focus:ring-2
+          focus:ring-accent/30
+          focus:ring-offset-2
+          focus:ring-offset-card
         "
       >
         Add Category

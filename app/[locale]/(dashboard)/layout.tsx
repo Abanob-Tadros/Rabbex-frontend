@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import Sidebar from "@/components/dashboard/Sidebar";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -17,8 +18,13 @@ export default async function DashboardLayout({
 
   return (
     <div className="w-full flex flex-row ">
-      <Sidebar />
-      <div className="w-full">{children}</div>
+      <div className="hidden md:flex ">
+        <Sidebar />
+      </div>
+      <div className="w-full h-full p-5">
+        <Breadcrumb />
+        {children}
+      </div>
     </div>
   );
 }

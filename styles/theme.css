@@ -9,8 +9,8 @@
   --secondary-foreground: #fafafa;
 
   /* Accent */
-  --accent: #c6a15b;
-  --accent-hover: #b18f4f;
+  --accent: #3b5b7a;
+  --accent-hover: #304b65;
   --accent-foreground: #ffffff;
 
   /* Semantic */
@@ -55,8 +55,8 @@
   --secondary-hover: #292929;
   --secondary-foreground: #fafafa;
 
-  --accent: #c6a15b;
-  --accent-hover: #d6b06a;
+  --accent: #6f8eaa;
+  --accent-hover: #89a4bc;
   --accent-foreground: #ffffff;
 
   --background: #090909;
@@ -74,7 +74,7 @@
 
 @theme inline {
   /* Fonts */
-   --font-sans: var(--font-manrope);
+  --font-sans: var(--font-manrope);
 
   /* Brand */
   --color-primary: var(--primary);

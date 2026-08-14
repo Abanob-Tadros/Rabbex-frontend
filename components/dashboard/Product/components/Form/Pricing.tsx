@@ -2,6 +2,7 @@
 
 import { useFormContext } from "react-hook-form";
 import { ProductFormData } from "./validation/schema";
+import ValidationErrorUi from "@/components/ValidationErrorUi";
 
 export default function Pricing() {
   const {
@@ -10,18 +11,24 @@ export default function Pricing() {
   } = useFormContext<ProductFormData>();
 
   return (
-    <section>
-      <h2 className="mb-4 text-lg font-semibold text-primary">
-        Pricing And Stock
-      </h2>
+    <section className="rounded-lg border border-border bg-card p-5 shadow-sm">
+      {/* Header */}
+      <div className="mb-5">
+        <h2 className="text-base font-semibold tracking-tight text-foreground">
+          Pricing 
+        </h2>
+
+        <p className="mt-1 text-xs text-muted-foreground">
+          Set the product pricing and discount details
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-
         {/* Price */}
         <div className="space-y-1.5">
           <label
             htmlFor="price"
-            className="text-xs font-medium text-primary"
+            className="text-xs font-medium text-foreground"
           >
             Base Pricing
           </label>
@@ -34,21 +41,36 @@ export default function Pricing() {
             {...register("price", {
               valueAsNumber: true,
             })}
-            className="h-10 w-full rounded-md border-0 bg-neutral-100 px-3 text-sm outline-none"
+            className="
+              h-10
+              w-full
+              rounded-md
+              border border-input
+              bg-surface
+              px-3
+              text-sm
+              text-foreground
+              outline-none
+              transition-all
+              duration-200
+              placeholder:text-muted-foreground
+
+              hover:border-accent/50
+
+              focus:border-accent
+              focus:ring-2
+              focus:ring-accent/20
+            "
           />
 
-          {errors.price && (
-            <p className="text-xs text-red-500">
-              {errors.price.message}
-            </p>
-          )}
+           <ValidationErrorUi message={errors.price?.message} />
         </div>
 
         {/* Discount */}
         <div className="space-y-1.5">
           <label
             htmlFor="discount"
-            className="text-xs font-medium text-primary"
+            className="text-xs font-medium text-foreground"
           >
             Discount
           </label>
@@ -59,24 +81,37 @@ export default function Pricing() {
             min="0"
             max="100"
             placeholder="10%"
-            {...register("discount", {
-              valueAsNumber: true,
-            })}
-            className="h-10 w-full rounded-md border-0 bg-neutral-100 px-3 text-sm outline-none"
+            {...register("discount")}
+            className="
+              h-10
+              w-full
+              rounded-md
+              border border-input
+              bg-surface
+              px-3
+              text-sm
+              text-foreground
+              outline-none
+              transition-all
+              duration-200
+              placeholder:text-muted-foreground
+
+              hover:border-accent/50
+
+              focus:border-accent
+              focus:ring-2
+              focus:ring-accent/20
+            "
           />
 
-          {errors.discount && (
-            <p className="text-xs text-red-500">
-              {errors.discount.message}
-            </p>
-          )}
+           <ValidationErrorUi message={errors.discount?.message} />
         </div>
 
         {/* Discount Type */}
         <div className="space-y-1.5">
           <label
             htmlFor="discountType"
-            className="text-xs font-medium text-primary"
+            className="text-xs font-medium text-foreground"
           >
             Discount Type
           </label>
@@ -84,7 +119,25 @@ export default function Pricing() {
           <select
             id="discountType"
             {...register("discountType")}
-            className="h-10 w-full rounded-md border-0 bg-neutral-100 px-3 text-sm outline-none"
+            className="
+              h-10
+              w-full
+              rounded-md
+              border border-input
+              bg-surface
+              px-3
+              text-sm
+              text-foreground
+              outline-none
+              transition-all
+              duration-200
+
+              hover:border-accent/50
+
+              focus:border-accent
+              focus:ring-2
+              focus:ring-accent/20
+            "
           >
             <option value="">Select discount type</option>
             <option value="chinese-new-year">
@@ -101,13 +154,8 @@ export default function Pricing() {
             </option>
           </select>
 
-          {errors.discountType && (
-            <p className="text-xs text-red-500">
-              {errors.discountType.message}
-            </p>
-          )}
+           <ValidationErrorUi message={errors.discount?.message} />
         </div>
-
       </div>
     </section>
   );

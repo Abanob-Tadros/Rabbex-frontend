@@ -16,7 +16,7 @@ type Props = {
   locale: string;
 };
 const navLinkes: INavLinkes[] = [
-  { title: "New Drops", url: "/New-Drops" },
+  { title: "Shop", url: "/Shop" },
   { title: "Collections", url: "/Collections" },
   { title: "About", url: "/About" },
 ];
