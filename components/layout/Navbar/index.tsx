@@ -2,11 +2,8 @@
 import { getTranslations } from "next-intl/server";
 
 // Components
-import HorizontalNavbar from "./HorizontalNavbar";
-// import VerticalNavbar from "./VerticalNavbar";
-import Logo from "@/components/Logo";
-
-// Data
+import HorizontalNavbar from "./DisctopNavbar";
+import MobileNavbar from "./MobileNavbar";
 
 export interface INavLinkes {
   title: string;
@@ -15,6 +12,7 @@ export interface INavLinkes {
 type Props = {
   locale: string;
 };
+// Linkes
 const navLinkes: INavLinkes[] = [
   { title: "Shop", url: "/Shop" },
   { title: "Collections", url: "/Collections" },
@@ -26,16 +24,14 @@ export const Navbar = async ({ locale }: Props) => {
   // const navbarData = createNavbarData(t);
 
   return (
-    <div >
+    <div>
       {/* Mobile */}
-      <div className=" block md:hidden">
-        <div className="" >
-          {/* <VerticalNavbar navbarData={navbarData} followTheme /> */}
-        </div>
+      <div className=" block md:hidden  ">
+          <MobileNavbar  Links={navLinkes} locale={locale}/>
       </div>
       {/* --------------- */}
       {/* Disctop */}
-     <div className="hidden md:block" >
+      <div className="hidden md:block">
         <HorizontalNavbar Links={navLinkes} locale={locale} />
       </div>
     </div>
