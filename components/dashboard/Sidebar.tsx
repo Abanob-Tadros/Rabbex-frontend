@@ -40,7 +40,7 @@ export default function Sidebar() {
     },
   ];
   return (
-    <div className="w-full max-w-70 h-screen flex flex-col  border border-border py-4 pr-4 ">
+    <div className="w-full max-w-70 h-screen flex flex-col sticky top-0npm run dev -- -H 0.0.0.0 self-start border border-border py-4 pr-4 ">
       <Logo followTheme />
       <div className="w-full border border-border mt-3" />
 
